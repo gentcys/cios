@@ -1,24 +1,30 @@
-# README
+# CIOS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CIOS is the abbreviation of company internal ordering system. As the name suggests, it means a system for employees to order meals.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+## Running the tests
 
-* System dependencies
+## Deployment
 
-* Configuration
+## Built with
 
-* Database creation
+- [Rails](https://rubyonrails.org/) - The web framework used
+- [PostgreSQL](https://www.postgresql.org/) - An object-relational
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+## Versioning
 
-* Services (job queues, cache servers, search engines, etc.)
+## Authors
 
-* Deployment instructions
+- **Gentry Chen**
 
-* ...
+See also the list of [contributors](https://github.com/gentcys/cios/graphs/contributors)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/gentcys/cios/blob/master/LICENSE) file for details.
+
+## Acknowledgments
