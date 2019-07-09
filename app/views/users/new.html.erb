@@ -1,31 +1,27 @@
-<div class="valign-wrapper" style="width: 100%;height:100%;position: absolute;">
-  <div class="valign" style="width: 100%;">
-    <div class="container">
-      <div class="row">
-        <form class="col s12 m6 l4 offset-m3 offset-l4 card-panel">
-          <div class="input-field">
-            <input class="validate" type="text" placeholder="Michael Jordan" id="name">
-            <label for="name">Name</label>
-          </div>
-          <div class="input-field">
-            <input class="validate" type="email" placeholder="mail@example.com" id="email">
-            <label for="email">Email</label>
-          </div>
-          <div class="input-field">
-            <input class="validate" type="password" placeholder="rickey" id="password">
-            <label for="password">Password</label>
-          </div>
-          <div class="input-field">
-            <input class="validate" type="password" placeholder="rickey" id="password-confirmation">
-            <label for="password">Password Confirmation</label>
-          </div>
-          <div class="input-field">
-            <button class="btn" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-        </form>
+<div class="row valign-wrapper signup-card">
+  <div class="col s12 m6 l4 offset-m3 offset-l4 card">
+    <%= form_for @user do |f| %>
+    <div class="card-content">
+      <div class="input-field">
+        <%= f.text_field :name, class: "validate", placeholder: "Michael Jordan" %>
+        <%= f.label :name %>
+      </div>
+      <div class="input-field">
+        <%= f.email_field :email, class: "validate", placeholder: "mail@example.com" %>
+        <%= f.label :email %>
+      </div>
+      <div class="input-field">
+        <%= f.password_field :password, class: "validate", placeholder: "******" %>
+        <%= f.label :password %>
+      </div>
+      <div class="input-field">
+        <%= f.password_field :password_confirmation, class: "validate", placeholder: "******" %>
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="input-field">
+        <%= f.submit "SIGNUP ", class: "btn waves-effect waves-light" %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
