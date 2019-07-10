@@ -1,0 +1,27 @@
+<div class="row valign-wrapper signup-card">
+  <div class="col s12 m6 l4 offset-m3 offset-l4 card">
+    <%= form_for @user do |f| %>
+    <div class="card-content">
+      <div class="input-field">
+        <%= f.text_field :name, class: "validate", placeholder: "Michael Jordan" %>
+        <%= f.label :name %>
+      </div>
+      <div class="input-field">
+        <%= f.email_field :email, class: "validate", placeholder: "mail@example.com" %>
+        <%= f.label :email %>
+      </div>
+      <div class="input-field">
+        <%= f.password_field :password, class: "validate", placeholder: "******" %>
+        <%= f.label :password %>
+      </div>
+      <div class="input-field">
+        <%= f.password_field :password_confirmation, class: "validate", placeholder: "******" %>
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="input-field">
+        <%= f.submit "SIGNUP ", class: "btn waves-effect waves-light" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
