@@ -14,5 +14,16 @@
     <div class="container main-container">
       <%= yield %>
     </div>
+    <% unless flash.empty? %>
+    <script>
+      <% flash.each do |type,message| %>
+      // typeがnoticeなら緑のカラーリングをする
+      <% color = 'green lighten-5 green-text' if type == 'notice' %>
+      // typeがalertなら赤のカラーリングをする
+      <% color = 'red lighten-5 red-text' if type == 'alert' %>
+      M.toast({html:'<%= message %>',classes:'<%= color %>'})
+      <% end %>
+    </script>
+    <% end %>
   </body>
 </html>
