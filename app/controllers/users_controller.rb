@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.with(user: @user).signup.deliver_later
+
       flash[:notice] = "Success"
       redirect_to root_path
     else

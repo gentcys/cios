@@ -68,9 +68,9 @@ Rails.application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV[GMAIL_USERNAME],
-    password: ENV[GMAIL_PASSWORD]
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
 
-  config.action_mailer.default_settings = { :host => "localhost:3000" }
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
 end

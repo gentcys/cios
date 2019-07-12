@@ -57,3 +57,7 @@ node_modules/
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/config/credentials/test.key
+
+/config/credentials/development.key
