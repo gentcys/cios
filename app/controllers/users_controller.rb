@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.with(user: @user).signup.deliver_later
 
+      sign_in(@user)
+
       flash[:notice] = "Success"
       redirect_to root_path
     else
