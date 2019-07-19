@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post "sign_in", to: 'sessions#create'
   post "users", to: 'users#create'
 
-  resources :orders, only: [:index]
+  resources :orders, only: [:index, :show]
 end

@@ -4,34 +4,16 @@
       <th>姓名</th>
       <th>订单</th>
       <th>时间</th>
+      <th>操作</th>
     </tr>
   </thead>
   <tbody>
     <% @orders.each do |order| %>
     <tr>
       <td><%= order.user.name %></td>
-      <td class="collapsible popout">
-        <div class="collapsible-header"><span><%= order.id %></span></div>
-        <div class="collapsible-body">
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>餐名</th>
-                <th>数量</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% order.order_items.each do |order_item| %>
-              <tr>
-                <td><%= order_item.item.name %></td>
-                <td><%= order_item.count %></td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-      </td>
+      <td><%= order.id %></td>
       <td><%= order.created_at %></td>
+      <td><%= link_to "详情", order_path(order) %></td>
     </tr>
     <% end %>
   </tbody>
