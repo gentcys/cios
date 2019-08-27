@@ -1,27 +1,27 @@
-<div class="row valign-wrapper signup-card">
-  <div class="col s12 m6 l4 offset-m3 offset-l4 card">
-    <%= form_for @user do |f| %>
-    <div class="card-content">
-      <div class="input-field">
-        <%= f.text_field :name, class: "validate", placeholder: "Michael Jordan" %>
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <%= form_for @user, html: { class: "box" } do |f| %>
+      <div class="field">
         <%= f.label :name %>
+        <%= f.text_field :name, class: "input", placeholder: "Michael Jordan" %>
       </div>
-      <div class="input-field">
-        <%= f.email_field :email, class: "validate", placeholder: "mail@example.com" %>
+      <div class="field">
         <%= f.label :email %>
+        <%= f.email_field :email, class: "input", placeholder: "mail@example.com" %>
       </div>
-      <div class="input-field">
-        <%= f.password_field :password, class: "validate", placeholder: "******" %>
+      <div class="field">
         <%= f.label :password %>
+        <%= f.password_field :password, class: "input", placeholder: "******" %>
       </div>
-      <div class="input-field">
-        <%= f.password_field :password_confirmation, class: "validate", placeholder: "******" %>
+      <div class="field">
         <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "input", placeholder: "******" %>
       </div>
-      <div class="input-field">
-        <%= f.submit "SIGNUP ", class: "btn waves-effect waves-light" %>
+      <div class="field">
+        <%= f.submit "SIGNUP ", class: "button is-primary is-fullwidth" %>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>

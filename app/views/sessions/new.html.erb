@@ -1,19 +1,24 @@
-<div class="row valign-wrapper signup-card">
-  <div class="col s12 m6 l4 offset-m3 offset-l4 card">
-    <%= form_for(:session, url: sign_in_path) do |f| %>
-    <div class="card-content">
-      <div class="input-field">
-        <%= f.email_field :email, class: "validate", placeholder: "mail@example.com" %>
-        <%= f.label :email %>
-      </div>
-      <div class="input-field">
-        <%= f.password_field :password, class: "validate", placeholder: "******" %>
-        <%= f.label :password %>
-      </div>
-      <div class="input-field">
-        <%= f.submit "SIGNIN ", class: "btn waves-effect waves-light" %>
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <%= form_for(:session, url: sign_in_path, html: { class: "box" }) do |f| %>
+        <div class="field">
+          <%= f.label :email  %>
+          <%= f.email_field :email, class: "input", placeholder: "mail@example.com" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "input", placeholder: "******" %>
+        </div>
+        <div class="field">
+          <%= f.submit "SIGN IN ", class: "button is-primary is-fullwidth" %>
+          <p class="help is-danger">
+            <%= link_to "Don't have acount yet?", sign_up_path %>
+          </p>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>

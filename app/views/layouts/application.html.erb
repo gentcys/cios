@@ -7,13 +7,14 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <div class="container main-container">
+    <section class="hero is-large">
       <%= yield %>
-    </div>
+    </section>
     <% unless flash.empty? %>
     <script>
       <% flash.each do |type,message| %>
@@ -24,6 +25,12 @@
       M.toast({html:'<%= message %>',classes:'<%= color %>'})
       <% end %>
     </script>
+    <% flash.each do |type,message| %>
+    <div class="notification <% type == 'notice' ? 'is-success' : 'is-danger' %>">
+      <button class="delete"></button>
+      <%= message %>
+    </div>
+    <% end %>
     <% end %>
   </body>
 </html>
