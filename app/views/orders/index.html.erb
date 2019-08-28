@@ -1,20 +1,41 @@
-<table class="table is-bordered is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>姓名</th>
-      <th>订单</th>
-      <th>时间</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-    <tr>
-      <td><%= order.user.name %></td>
-      <td><%= order.id %></td>
-      <td><%= order.created_at %></td>
-      <td><%= link_to "详情", order_path(order) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="card">
+          <div class="card-content">
+            <table class="table is-bordered is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>订单</th>
+                  <th>时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% orders.each do |order| %>
+                <tr>
+                  <td><%= order.user.name %></td>
+                  <td><%= order.id %></td>
+                  <td><%= order.created_at %></td>
+                  <td><%= link_to "详情", order_path(order) %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <footer class="card-footer">
+            <% items_statistics.each do |key, value| %>
+            <p class="card-footer-item">
+              <span>
+                <%= key %>: <%= value %>
+              </span>
+            </p>
+            <% end %>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

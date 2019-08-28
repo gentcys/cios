@@ -2,6 +2,15 @@ class OrdersController < ApplicationController
   before_action :signed_in_user, only: [:index, :show]
   def index
     @orders = Order.all
+    @items_statistics = Hash.new{0}
+
+    @orders.each do |order|
+      order.order_items.each do |order_item|
+        @items_statistics[order_item.item.name] += order_item.count
+      end
+    end
+
+    render :index, locals: { orders: @orders, items_statistics: @items_statistics }
   end
 
   def show
