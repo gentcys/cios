@@ -1,7 +1,7 @@
 <div class="hero-body">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-full">
+      <div class="column is-narrow">
         <div class="card">
           <div class="card-header">
             <p class="card-header-title">Orders List</p>
@@ -10,10 +10,10 @@
             <table class="table is-bordered is-striped is-hoverable">
               <thead>
                 <tr>
-                  <th>姓名</th>
-                  <th>订单</th>
-                  <th>时间</th>
-                  <th>操作</th>
+                  <th>Username</th>
+                  <th>Order</th>
+                  <th>CreatedAt</th>
+                  <th>Operations</th>
                 </tr>
               </thead>
               <tbody>
@@ -22,7 +22,7 @@
                   <td><%= order.user.name %></td>
                   <td><%= order.id %></td>
                   <td><%= order.created_at %></td>
-                  <td><%= link_to "详情", order_path(order) %></td>
+                  <td><%= link_to "Detail", order_path(order) %></td>
                 </tr>
                 <% end %>
               </tbody>
