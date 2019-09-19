@@ -1,16 +1,31 @@
-<table class="table is-bordered is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>菜品</th>
-      <th>数量</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @order_items.each do |order_item| %>
-    <tr>
-      <td><%= order_item.item.name %></td>
-      <td><%= order_item.count %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <div class="card">
+          <div class="card-header">
+            <p class="card-header-title">Orders Detail</p>
+          </div>
+          <div class="card-content">
+            <table class="table is-bordered is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @order_items.each do |order_item| %>
+                <tr>
+                  <td><%= order_item.item.name %></td>
+                  <td><%= order_item.count %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
